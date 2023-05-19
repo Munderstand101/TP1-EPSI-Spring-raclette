@@ -16,41 +16,43 @@
 
 <div class="container">
 
-	<h3>Employee Directory</h3>
+	<h3>Product Directory</h3>
 	<hr>
 	
 	<!-- Add a button -->
-	<a th:href="@{/employees/showFormForAdd}"
+	<a th:href="@{/templates/crud/showFormForAdd}"
 		class="btn btn-primary btn-sm mb-3">
-		Add Employee	
+		Add Product
 	</a>
 	<table class="table table-borderd table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th>FristName</th>
-				<th>listName</th>
-				<th>Email</th>
+				<th>name</th>
+				<th>created</th>
+				<th>price</th>
+				<th>description</th>
 				<th>Action</th>
 			</tr>
 		</thead>
 		
 		<tbody>
-			<tr th:each="tempEmployee : ${employees}">
-				<td th:text="${tempEmployee.firstName}" />
-				<td th:text="${tempEmployee.lastName}" />
-				<td th:text="${tempEmployee.email}" />
-				
+			<tr th:each="product : ${products}">
+				<td th:text="${product.name}" />
+				<td th:text="${product.created}" />
+				<td th:text="${product.price}" />
+				<td th:text="${product.description}" />
+
 				<td>
 					<!-- Add "update" button/link -->
-					<a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}"
+					<a th:href="@{/templates/crud/showFormForUpdate(productId=${product.id})}"
 					   class="btn btn-info btn-sm">
 						Update
 					</a>
 					
 					<!-- Add "delete" button/link -->
-					<a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}"
+					<a th:href="@{/templates/crud/delete(productId=${product.id})}"
 					   class="btn btn-danger btn-sm"
-					   onclick="if (!(confirm('Are you sure tou want to delete this employee?'))) return false">
+					   onclick="if (!(confirm('Are you sure tou want to delete this product?'))) return false">
 						Delete
 					</a>
 				</td>
