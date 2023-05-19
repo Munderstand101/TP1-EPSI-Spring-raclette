@@ -12,32 +12,35 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous">
       
-  	<title>Save Employee</title>
+  	<title>Save Product</title>
 </head>
 
 <body>
 
 	<div class="container">
 	
-	<h3>Employee Directory</h3>
+	<h3>Product Directory</h3>
 	<hr>
 	
-	<p class="h4 mb-4">Save Employee</p>
+	<p class="h4 mb-4">Save Product</p>
 	
-	<form action="#" th:action="@{/employees/save}"
-					 th:object="${employee}" method="POST">
+	<form action="#" th:action="@{/templates/crud/save}"
+					 th:object="${product}" method="POST">
 					 
 		<!-- Add hidden form field to handle update -->			 
 		<input type="hidden" th:field="*{id}" />
 					 
-		<input type="text" th:field="*{firstName}"
-				class="form-control mb-4 col-4" placeholder="First name">
+		<input type="text" th:field="*{name}"
+				class="form-control mb-4 col-4" placeholder="">
 		
-		<input type="text" th:field="*{lastName}"
-				class="form-control mb-4 col-4" placeholder="Last name">
+		<input type="text" th:field="*{created}"
+				class="form-control mb-4 col-4" placeholder="">
 				
-		<input type="text" th:field="*{Email}"
-				class="form-control mb-4 col-4" placeholder="Email">	
+		<input type="text" th:field="*{price}"
+				class="form-control mb-4 col-4" placeholder="">
+
+		<input type="text" th:field="*{description}"
+				class="form-control mb-4 col-4" placeholder="">
 				
 		<button type="submit" class="btn btn-info col-2">Save</button>	
 				
@@ -45,7 +48,7 @@
 	</form>
 	
 	<hr>
-	<a th:href="@{/employees/list}">Back to Employees List</a>
+	<a th:href="@{/templates/crud/list}">Back to Products List</a>
 	
 	</div>
 
