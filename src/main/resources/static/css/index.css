@@ -1,13 +1,18 @@
 	body{text-align:center;}
 
     .product-card {
-       width: 300px;
+       width: 20%;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 15px;
       padding: 10px;
       margin-bottom: 10px;
       transition: box-shadow 0.3s ease;
   }
+
+  .button-buy{
+    background-color: blue;
+  }
+
   .product-card:hover{
       box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
   }
@@ -21,8 +26,8 @@
       margin-bottom: 10px;
   }
   .product-img {
-      height:10%;
-      width:10%;
+      height:100%;
+      width:100%;
   }
    .navbar {
       background-color: #333;
