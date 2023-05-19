@@ -1,4 +1,4 @@
-package dev.epsi.raclette.Controller;
+package dev.epsi.raclette.controller;
 
 import dev.epsi.raclette.Entity.Product;
 import dev.epsi.raclette.Service.ProductService;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Munderstand
@@ -15,7 +16,6 @@ import java.util.List;
  * @project raclette
  */
 @Controller
-@RequestMapping("/products")
 public class ProductController {
 
     private  ProductService productService;
@@ -24,7 +24,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/")
+    @GetMapping(value = { "/", "/index" })
     public String listShopProducts(Model theModel) {
 
         //
@@ -33,7 +33,7 @@ public class ProductController {
         //
         theModel.addAttribute("products", theProducts);
 
-        return "shop/list-products";
+        return "index";
     }
 
 

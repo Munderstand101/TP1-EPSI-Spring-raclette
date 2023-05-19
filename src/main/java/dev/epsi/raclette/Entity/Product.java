@@ -38,5 +38,8 @@ public class Product {
     @Column(name = "description", nullable = false)
     private String description;
 
+    @Column(name = "url", nullable = false)
+    private String urlImage;
+
 
 }
